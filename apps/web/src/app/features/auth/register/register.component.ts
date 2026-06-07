@@ -33,7 +33,6 @@ function passwordStrength(ctrl: AbstractControl): ValidationErrors | null {
     MatStepperModule,
   ],
   templateUrl: './register.component.html',
-  styleUrl: './register.component.scss',
 })
 export class RegisterComponent {
   private readonly fb = inject(FormBuilder);
