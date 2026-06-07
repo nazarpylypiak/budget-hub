@@ -2,7 +2,11 @@ import { Injectable, signal, computed, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { tap } from 'rxjs/operators';
-import type { LoginDto, RegisterDto, AuthResponseDto } from '@budget-hub/shared-types';
+import type {
+  LoginDto,
+  RegisterDto,
+  AuthResponseDto,
+} from '@budget-hub/shared-types';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
@@ -10,7 +14,7 @@ export class AuthService {
   private readonly router = inject(Router);
 
   private readonly _accessToken = signal<string | null>(
-    localStorage.getItem('access_token')
+    localStorage.getItem('access_token'),
   );
 
   readonly isAuthenticated = computed(() => !!this._accessToken());
@@ -18,26 +22,26 @@ export class AuthService {
 
   login(dto: LoginDto) {
     return this.http.post<AuthResponseDto>('/api/auth/login', dto).pipe(
-      tap(res => {
+      tap((res) => {
         this._accessToken.set(res.accessToken);
         localStorage.setItem('access_token', res.accessToken);
-      })
+      }),
     );
   }
 
   register(dto: RegisterDto) {
     return this.http.post<AuthResponseDto>('/api/auth/register', dto).pipe(
-      tap(res => {
+      tap((res) => {
         this._accessToken.set(res.accessToken);
         localStorage.setItem('access_token', res.accessToken);
-      })
+      }),
     );
   }
 
   logout() {
-    return this.http.post('/api/auth/logout', {}).pipe(
-      tap(() => this.clearSession())
-    );
+    return this.http
+      .post('/api/auth/logout', {})
+      .pipe(tap(() => this.clearSession()));
   }
 
   setToken(token: string) {

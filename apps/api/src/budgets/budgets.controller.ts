@@ -1,9 +1,22 @@
-import { Controller, Get, Post, Patch, Delete, Body, Param, Query, UseGuards } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Patch,
+  Delete,
+  Body,
+  Param,
+  Query,
+  UseGuards,
+} from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import { BudgetsService } from './budgets.service';
 import { CurrentUser } from '../auth/decorators/current-user.decorator';
 import type { RequestUser } from '../auth/strategies/jwt.strategy';
-import type { CreateBudgetDto, UpdateBudgetDto } from '@budget-hub/shared-types';
+import type {
+  CreateBudgetDto,
+  UpdateBudgetDto,
+} from '@budget-hub/shared-types';
 
 @Controller('budgets')
 @UseGuards(AuthGuard('jwt'))
@@ -21,7 +34,11 @@ export class BudgetsController {
   }
 
   @Patch(':id')
-  update(@CurrentUser() user: RequestUser, @Param('id') id: string, @Body() dto: UpdateBudgetDto) {
+  update(
+    @CurrentUser() user: RequestUser,
+    @Param('id') id: string,
+    @Body() dto: UpdateBudgetDto,
+  ) {
     return this.budgets.update(id, user.householdId, dto);
   }
 

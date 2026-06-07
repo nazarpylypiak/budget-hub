@@ -28,7 +28,10 @@ export class LoginComponent {
     this.error.set(null);
     this.auth.login(this.form.getRawValue()).subscribe({
       next: () => this.router.navigate(['/dashboard']),
-      error: () => { this.error.set('Invalid email or password'); this.loading.set(false); },
+      error: () => {
+        this.error.set('Invalid email or password');
+        this.loading.set(false);
+      },
     });
   }
 }

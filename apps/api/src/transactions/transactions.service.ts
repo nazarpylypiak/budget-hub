@@ -1,6 +1,10 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
-import type { CreateTransactionDto, UpdateTransactionDto, TransactionFilterDto } from '@budget-hub/shared-types';
+import type {
+  CreateTransactionDto,
+  UpdateTransactionDto,
+  TransactionFilterDto,
+} from '@budget-hub/shared-types';
 
 @Injectable()
 export class TransactionsService {
@@ -13,7 +17,12 @@ export class TransactionsService {
         ...(filter.categoryId && { categoryId: filter.categoryId }),
         ...(filter.type && { type: filter.type }),
         ...(filter.startDate || filter.endDate
-          ? { date: { gte: filter.startDate ? new Date(filter.startDate) : undefined, lte: filter.endDate ? new Date(filter.endDate) : undefined } }
+          ? {
+              date: {
+                gte: filter.startDate ? new Date(filter.startDate) : undefined,
+                lte: filter.endDate ? new Date(filter.endDate) : undefined,
+              },
+            }
           : {}),
       },
       include: { category: { select: { name: true } } },

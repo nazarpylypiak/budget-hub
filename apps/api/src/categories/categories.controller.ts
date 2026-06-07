@@ -1,9 +1,21 @@
-import { Controller, Get, Post, Patch, Delete, Body, Param, UseGuards } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Patch,
+  Delete,
+  Body,
+  Param,
+  UseGuards,
+} from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import { CategoriesService } from './categories.service';
 import { CurrentUser } from '../auth/decorators/current-user.decorator';
 import type { RequestUser } from '../auth/strategies/jwt.strategy';
-import type { CreateCategoryDto, UpdateCategoryDto } from '@budget-hub/shared-types';
+import type {
+  CreateCategoryDto,
+  UpdateCategoryDto,
+} from '@budget-hub/shared-types';
 
 @Controller('categories')
 @UseGuards(AuthGuard('jwt'))
@@ -21,7 +33,11 @@ export class CategoriesController {
   }
 
   @Patch(':id')
-  update(@CurrentUser() user: RequestUser, @Param('id') id: string, @Body() dto: UpdateCategoryDto) {
+  update(
+    @CurrentUser() user: RequestUser,
+    @Param('id') id: string,
+    @Body() dto: UpdateCategoryDto,
+  ) {
     return this.categories.update(id, user.householdId, dto);
   }
 
