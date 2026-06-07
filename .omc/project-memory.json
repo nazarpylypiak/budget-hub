@@ -76,6 +76,12 @@
       "type": "file"
     },
     {
+      "path": "apps/web/src/app/app.routes.ts",
+      "accessCount": 4,
+      "lastAccessed": 1780841365201,
+      "type": "file"
+    },
+    {
       "path": "tsconfig.base.json",
       "accessCount": 3,
       "lastAccessed": 1780835768290,
@@ -112,6 +118,12 @@
       "type": "file"
     },
     {
+      "path": "apps/web/src/app/core/auth/auth.service.ts",
+      "accessCount": 3,
+      "lastAccessed": 1780841336048,
+      "type": "file"
+    },
+    {
       "path": "README.md",
       "accessCount": 2,
       "lastAccessed": 1780834418455,
@@ -127,12 +139,6 @@
       "path": "libs/shared-types/tsconfig.json",
       "accessCount": 2,
       "lastAccessed": 1780835774078,
-      "type": "file"
-    },
-    {
-      "path": "apps/web/src/app/app.routes.ts",
-      "accessCount": 2,
-      "lastAccessed": 1780835928667,
       "type": "file"
     },
     {
@@ -223,12 +229,6 @@
       "path": "libs/shared-types/src/index.ts",
       "accessCount": 1,
       "lastAccessed": 1780835707168,
-      "type": "file"
-    },
-    {
-      "path": "apps/web/src/app/core/auth/auth.service.ts",
-      "accessCount": 1,
-      "lastAccessed": 1780835901197,
       "type": "file"
     },
     {

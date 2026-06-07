@@ -10,36 +10,40 @@ export const appRoutes: Route[] = [
       import('./features/auth/auth.routes').then((m) => m.authRoutes),
   },
   {
-    path: 'dashboard',
+    path: '',
     canActivate: [authGuard],
     loadComponent: () =>
-      import('./features/dashboard/dashboard.component').then(
-        (m) => m.DashboardComponent,
-      ),
-  },
-  {
-    path: 'transactions',
-    canActivate: [authGuard],
-    loadComponent: () =>
-      import('./features/transactions/transactions.component').then(
-        (m) => m.TransactionsComponent,
-      ),
-  },
-  {
-    path: 'budgets',
-    canActivate: [authGuard],
-    loadComponent: () =>
-      import('./features/budgets/budgets.component').then(
-        (m) => m.BudgetsComponent,
-      ),
-  },
-  {
-    path: 'settings',
-    canActivate: [authGuard],
-    loadComponent: () =>
-      import('./features/settings/settings.component').then(
-        (m) => m.SettingsComponent,
-      ),
+      import('./core/shell/shell.component').then((m) => m.ShellComponent),
+    children: [
+      {
+        path: 'dashboard',
+        loadComponent: () =>
+          import('./features/dashboard/dashboard.component').then(
+            (m) => m.DashboardComponent,
+          ),
+      },
+      {
+        path: 'transactions',
+        loadComponent: () =>
+          import('./features/transactions/transactions.component').then(
+            (m) => m.TransactionsComponent,
+          ),
+      },
+      {
+        path: 'budgets',
+        loadComponent: () =>
+          import('./features/budgets/budgets.component').then(
+            (m) => m.BudgetsComponent,
+          ),
+      },
+      {
+        path: 'settings',
+        loadComponent: () =>
+          import('./features/settings/settings.component').then(
+            (m) => m.SettingsComponent,
+          ),
+      },
+    ],
   },
   { path: '**', redirectTo: '/dashboard' },
 ];
