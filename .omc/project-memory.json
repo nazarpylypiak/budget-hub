@@ -40,6 +40,30 @@
       "type": "file"
     },
     {
+      "path": "apps/web/src/app/features/auth/login/login.component.ts",
+      "accessCount": 6,
+      "lastAccessed": 1780841092408,
+      "type": "file"
+    },
+    {
+      "path": "apps/web/src/app/features/auth/login/login.component.html",
+      "accessCount": 6,
+      "lastAccessed": 1780841106583,
+      "type": "file"
+    },
+    {
+      "path": "apps/web/src/app/features/auth/register/register.component.ts",
+      "accessCount": 6,
+      "lastAccessed": 1780841124783,
+      "type": "file"
+    },
+    {
+      "path": "apps/web/src/app/features/auth/register/register.component.html",
+      "accessCount": 6,
+      "lastAccessed": 1780841146710,
+      "type": "file"
+    },
+    {
       "path": "package.json",
       "accessCount": 4,
       "lastAccessed": 1780836283793,
@@ -82,27 +106,9 @@
       "type": "file"
     },
     {
-      "path": "apps/web/src/app/features/auth/login/login.component.html",
+      "path": "apps/web/src/app/features/auth/auth.routes.ts",
       "accessCount": 3,
-      "lastAccessed": 1780840495377,
-      "type": "file"
-    },
-    {
-      "path": "apps/web/src/app/features/auth/register/register.component.html",
-      "accessCount": 3,
-      "lastAccessed": 1780840512336,
-      "type": "file"
-    },
-    {
-      "path": "apps/web/src/app/features/auth/login/login.component.ts",
-      "accessCount": 3,
-      "lastAccessed": 1780840528952,
-      "type": "file"
-    },
-    {
-      "path": "apps/web/src/app/features/auth/register/register.component.ts",
-      "accessCount": 3,
-      "lastAccessed": 1780840530551,
+      "lastAccessed": 1780841056942,
       "type": "file"
     },
     {
@@ -229,12 +235,6 @@
       "path": "apps/web/src/app/core/guards/auth.guard.ts",
       "accessCount": 1,
       "lastAccessed": 1780835908225,
-      "type": "file"
-    },
-    {
-      "path": "apps/web/src/app/features/auth/auth.routes.ts",
-      "accessCount": 1,
-      "lastAccessed": 1780835963612,
       "type": "file"
     },
     {

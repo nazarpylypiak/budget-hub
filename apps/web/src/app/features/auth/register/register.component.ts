@@ -1,13 +1,8 @@
 import { Component, inject, signal } from '@angular/core';
 import { AbstractControl, FormBuilder, ReactiveFormsModule, ValidationErrors, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
-import { MatCardModule } from '@angular/material/card';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { MatStepperModule } from '@angular/material/stepper';
 import { AuthService } from '../../../core/auth/auth.service';
 
 function passwordStrength(ctrl: AbstractControl): ValidationErrors | null {
@@ -21,17 +16,7 @@ function passwordStrength(ctrl: AbstractControl): ValidationErrors | null {
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [
-    ReactiveFormsModule,
-    RouterLink,
-    MatCardModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule,
-    MatIconModule,
-    MatProgressSpinnerModule,
-    MatStepperModule,
-  ],
+  imports: [ReactiveFormsModule, RouterLink, MatIconModule, MatProgressSpinnerModule],
   templateUrl: './register.component.html',
 })
 export class RegisterComponent {
@@ -55,6 +40,15 @@ export class RegisterComponent {
   get emailCtrl() { return this.form.controls.email; }
   get passwordCtrl() { return this.form.controls.password; }
 
+  get strengthLevel(): 0 | 1 | 2 | 3 {
+    const v = this.passwordCtrl.value;
+    let score = 0;
+    if (v.length >= 8) score++;
+    if (/[A-Z]/.test(v)) score++;
+    if (/[0-9]/.test(v)) score++;
+    return score as 0 | 1 | 2 | 3;
+  }
+
   passwordError(): string | null {
     const e = this.passwordCtrl.errors;
     if (!e || !this.passwordCtrl.touched) return null;
@@ -65,19 +59,14 @@ export class RegisterComponent {
   }
 
   submit() {
-    if (this.form.invalid) {
-      this.form.markAllAsTouched();
-      return;
-    }
+    if (this.form.invalid) { this.form.markAllAsTouched(); return; }
     this.loading.set(true);
     this.error.set(null);
     this.auth.register(this.form.getRawValue()).subscribe({
       next: () => this.router.navigate(['/dashboard']),
       error: (err) => {
         this.error.set(
-          err.status === 409
-            ? 'This email is already registered.'
-            : 'Registration failed. Please try again.',
+          err.status === 409 ? 'This email is already registered.' : 'Registration failed. Please try again.',
         );
         this.loading.set(false);
       },
