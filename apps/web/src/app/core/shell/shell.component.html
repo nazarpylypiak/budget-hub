@@ -1,0 +1,62 @@
+<div class="flex h-screen bg-gray-50">
+  <!-- Sidebar -->
+  <aside class="w-64 flex flex-col bg-white border-r border-gray-100 flex-shrink-0">
+    <!-- Logo -->
+    <div class="flex items-center gap-2.5 px-5 py-5 border-b border-gray-100">
+      <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-700
+                  flex items-center justify-center flex-shrink-0">
+        <mat-icon class="!text-[16px] !w-[16px] !h-[16px] text-white">account_balance_wallet</mat-icon>
+      </div>
+      <span class="font-bold text-gray-900 text-base">Budget Hub</span>
+    </div>
+
+    <!-- Nav -->
+    <nav class="flex-1 px-3 py-4 space-y-0.5 overflow-y-auto">
+      @for (item of navItems; track item.path) {
+        <a
+          [routerLink]="item.path"
+          routerLinkActive="bg-blue-50 text-blue-700 font-medium"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-gray-600
+                 hover:bg-gray-50 hover:text-gray-900 transition-colors group"
+        >
+          <mat-icon
+            class="!text-[20px] !w-[20px] !h-[20px] transition-colors
+                   group-[.bg-blue-50]:text-blue-600"
+          >{{ item.icon }}</mat-icon>
+          {{ item.label }}
+        </a>
+      }
+    </nav>
+
+    <!-- User + Logout -->
+    <div class="border-t border-gray-100 p-3">
+      @if (user(); as u) {
+        <div class="flex items-center gap-2.5 px-2 py-2 mb-1 rounded-lg">
+          <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center
+                      flex-shrink-0 text-blue-700 font-semibold text-sm uppercase">
+            {{ u.name.charAt(0) }}
+          </div>
+          <div class="min-w-0">
+            <p class="text-sm font-medium text-gray-900 truncate">{{ u.name }}</p>
+            <p class="text-xs text-gray-400 truncate">{{ u.email }}</p>
+          </div>
+        </div>
+      }
+      <button
+        (click)="logout()"
+        [disabled]="loggingOut()"
+        class="flex items-center gap-3 w-full px-3 py-2.5 rounded-lg text-sm text-gray-500
+               hover:bg-red-50 hover:text-red-600 transition-colors disabled:opacity-50 group"
+      >
+        <mat-icon class="!text-[20px] !w-[20px] !h-[20px]">logout</mat-icon>
+        {{ loggingOut() ? 'Signing out…' : 'Sign out' }}
+      </button>
+    </div>
+  </aside>
+
+  <!-- Main content -->
+  <main class="flex-1 overflow-y-auto">
+    <router-outlet />
+  </main>
+</div>

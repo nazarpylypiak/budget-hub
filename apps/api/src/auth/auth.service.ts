@@ -8,7 +8,8 @@ import { ConfigService } from '@nestjs/config';
 import { PrismaService } from '../prisma/prisma.service';
 import type { JwtPayload } from './strategies/jwt.strategy';
 import * as bcrypt from 'bcrypt';
-import type { RegisterDto, LoginDto } from '@budget-hub/shared-types';
+import { RegisterDto } from './dto/register.dto';
+import { LoginDto } from './dto/login.dto';
 
 @Injectable()
 export class AuthService {
@@ -27,7 +28,7 @@ export class AuthService {
     const household = await this.prisma.household.create({
       data: { name: dto.householdName },
     });
-    const password = await bcrypt.hash(dto.password, 10);
+    const password = await bcrypt.hash(dto.password, 12);
     const user = await this.prisma.user.create({
       data: {
         email: dto.email,

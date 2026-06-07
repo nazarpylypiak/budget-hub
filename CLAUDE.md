@@ -21,7 +21,7 @@ npx nx run-many --target=test --all
 npx nx affected --target=test   # only changed projects
 
 # Database
-docker-compose up -d             # start PostgreSQL on :5432
+docker compose up -d             # start PostgreSQL on :5432
 npx prisma migrate dev           # run from apps/api/
 npx prisma studio                # GUI for database browsing
 npx prisma generate              # regenerate Prisma client after schema changes
