@@ -1,79 +1,94 @@
-<div class="auth-page">
-  <mat-card class="auth-card">
-    <mat-card-header>
-      <mat-card-title>Sign in</mat-card-title>
-      <mat-card-subtitle>Welcome back to Budget Hub</mat-card-subtitle>
-    </mat-card-header>
+<div class="min-h-screen bg-gray-100 flex items-center justify-center p-4">
+  <div class="w-full max-w-md bg-white rounded-2xl shadow-md p-8">
+    <div class="mb-6">
+      <h1 class="text-2xl font-semibold text-gray-900">Sign in</h1>
+      <p class="text-sm text-gray-500 mt-1">Welcome back to Budget Hub</p>
+    </div>
 
-    <mat-card-content>
-      <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
-        <mat-form-field appearance="outline" class="full-width">
-          <mat-label>Email</mat-label>
+    <form [formGroup]="form" (ngSubmit)="submit()" novalidate class="space-y-5">
+      <!-- Email -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+        <div class="relative">
+          <span class="absolute inset-y-0 left-3 flex items-center text-gray-400">
+            <mat-icon class="text-[18px]">email</mat-icon>
+          </span>
           <input
-            matInput
             type="email"
             formControlName="email"
             autocomplete="email"
             placeholder="you@example.com"
+            class="w-full pl-10 pr-4 py-2.5 border rounded-lg text-sm outline-none transition
+                   focus:ring-2 focus:ring-blue-500 focus:border-blue-500
+                   placeholder:text-gray-400"
+            [class.border-red-400]="emailCtrl.invalid && emailCtrl.touched"
+            [class.border-gray-300]="!(emailCtrl.invalid && emailCtrl.touched)"
           />
-          <mat-icon matPrefix>email</mat-icon>
-          @if (emailCtrl.hasError('required') && emailCtrl.touched) {
-            <mat-error>Email is required</mat-error>
-          } @else if (emailCtrl.hasError('email') && emailCtrl.touched) {
-            <mat-error>Enter a valid email address</mat-error>
-          }
-        </mat-form-field>
+        </div>
+        @if (emailCtrl.hasError('required') && emailCtrl.touched) {
+          <p class="mt-1 text-xs text-red-500">Email is required</p>
+        } @else if (emailCtrl.hasError('email') && emailCtrl.touched) {
+          <p class="mt-1 text-xs text-red-500">Enter a valid email address</p>
+        }
+      </div>
 
-        <mat-form-field appearance="outline" class="full-width">
-          <mat-label>Password</mat-label>
+      <!-- Password -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+        <div class="relative">
+          <span class="absolute inset-y-0 left-3 flex items-center text-gray-400">
+            <mat-icon class="text-[18px]">lock</mat-icon>
+          </span>
           <input
-            matInput
             [type]="hidePassword() ? 'password' : 'text'"
             formControlName="password"
             autocomplete="current-password"
+            class="w-full pl-10 pr-10 py-2.5 border rounded-lg text-sm outline-none transition
+                   focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            [class.border-red-400]="passwordCtrl.invalid && passwordCtrl.touched"
+            [class.border-gray-300]="!(passwordCtrl.invalid && passwordCtrl.touched)"
           />
-          <mat-icon matPrefix>lock</mat-icon>
           <button
-            mat-icon-button
-            matSuffix
             type="button"
             (click)="hidePassword.set(!hidePassword())"
-            [attr.aria-label]="hidePassword() ? 'Show password' : 'Hide password'"
+            class="absolute inset-y-0 right-3 flex items-center text-gray-400 hover:text-gray-600"
           >
-            <mat-icon>{{ hidePassword() ? 'visibility_off' : 'visibility' }}</mat-icon>
+            <mat-icon class="text-[18px]">{{ hidePassword() ? 'visibility_off' : 'visibility' }}</mat-icon>
           </button>
-          @if (passwordCtrl.hasError('required') && passwordCtrl.touched) {
-            <mat-error>Password is required</mat-error>
-          }
-        </mat-form-field>
-
-        @if (error()) {
-          <div class="error-banner">
-            <mat-icon>error_outline</mat-icon>
-            <span>{{ error() }}</span>
-          </div>
+        </div>
+        @if (passwordCtrl.hasError('required') && passwordCtrl.touched) {
+          <p class="mt-1 text-xs text-red-500">Password is required</p>
         }
+      </div>
 
-        <button
-          mat-flat-button
-          color="primary"
-          type="submit"
-          class="full-width submit-btn"
-          [disabled]="loading()"
-        >
-          @if (loading()) {
-            <mat-spinner diameter="20" />
-          } @else {
-            Sign in
-          }
-        </button>
-      </form>
-    </mat-card-content>
+      <!-- Server error -->
+      @if (error()) {
+        <div class="flex items-center gap-2 bg-red-50 text-red-700 text-sm px-4 py-3 rounded-lg">
+          <mat-icon class="text-[18px]">error_outline</mat-icon>
+          <span>{{ error() }}</span>
+        </div>
+      }
 
-    <mat-card-actions>
-      <span class="auth-link">
-        Don't have an account? <a routerLink="/auth/register">Create one</a>
-      </span>
-    </mat-card-actions>
-  </mat-card>
+      <!-- Submit -->
+      <button
+        type="submit"
+        [disabled]="loading()"
+        class="w-full flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700
+               disabled:opacity-60 disabled:cursor-not-allowed text-white font-medium
+               py-2.5 rounded-lg transition text-sm"
+      >
+        @if (loading()) {
+          <mat-spinner diameter="18" />
+          <span>Signing in…</span>
+        } @else {
+          Sign in
+        }
+      </button>
+    </form>
+
+    <p class="mt-6 text-center text-sm text-gray-500">
+      Don't have an account?
+      <a routerLink="/auth/register" class="text-blue-600 font-medium hover:underline">Create one</a>
+    </p>
+  </div>
 </div>

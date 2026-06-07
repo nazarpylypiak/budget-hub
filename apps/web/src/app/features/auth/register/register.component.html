@@ -1,88 +1,140 @@
-<div class="auth-page">
-  <mat-card class="auth-card">
-    <mat-card-header>
-      <mat-card-title>Create account</mat-card-title>
-      <mat-card-subtitle>Set up your family budget</mat-card-subtitle>
-    </mat-card-header>
+<div class="min-h-screen bg-gray-100 flex items-center justify-center p-4">
+  <div class="w-full max-w-md bg-white rounded-2xl shadow-md p-8">
+    <div class="mb-6">
+      <h1 class="text-2xl font-semibold text-gray-900">Create account</h1>
+      <p class="text-sm text-gray-500 mt-1">Set up your family budget</p>
+    </div>
 
-    <mat-card-content>
-      <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
-        <mat-form-field appearance="outline" class="full-width">
-          <mat-label>Your name</mat-label>
-          <input matInput formControlName="name" autocomplete="name" />
-          <mat-icon matPrefix>person</mat-icon>
-          @if (nameCtrl.hasError('required') && nameCtrl.touched) {
-            <mat-error>Name is required</mat-error>
-          } @else if (nameCtrl.hasError('minlength') && nameCtrl.touched) {
-            <mat-error>At least 2 characters</mat-error>
-          }
-        </mat-form-field>
-
-        <mat-form-field appearance="outline" class="full-width">
-          <mat-label>Household name</mat-label>
-          <input matInput formControlName="householdName" placeholder="e.g. Smith Family" />
-          <mat-icon matPrefix>home</mat-icon>
-          @if (householdCtrl.hasError('required') && householdCtrl.touched) {
-            <mat-error>Household name is required</mat-error>
-          }
-        </mat-form-field>
-
-        <mat-form-field appearance="outline" class="full-width">
-          <mat-label>Email</mat-label>
-          <input matInput type="email" formControlName="email" autocomplete="email" placeholder="you@example.com" />
-          <mat-icon matPrefix>email</mat-icon>
-          @if (emailCtrl.hasError('required') && emailCtrl.touched) {
-            <mat-error>Email is required</mat-error>
-          } @else if (emailCtrl.hasError('email') && emailCtrl.touched) {
-            <mat-error>Enter a valid email address</mat-error>
-          }
-        </mat-form-field>
-
-        <mat-form-field appearance="outline" class="full-width">
-          <mat-label>Password</mat-label>
+    <form [formGroup]="form" (ngSubmit)="submit()" novalidate class="space-y-5">
+      <!-- Name -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1">Your name</label>
+        <div class="relative">
+          <span class="absolute inset-y-0 left-3 flex items-center text-gray-400">
+            <mat-icon class="text-[18px]">person</mat-icon>
+          </span>
           <input
-            matInput
+            type="text"
+            formControlName="name"
+            autocomplete="name"
+            class="w-full pl-10 pr-4 py-2.5 border rounded-lg text-sm outline-none transition
+                   focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            [class.border-red-400]="nameCtrl.invalid && nameCtrl.touched"
+            [class.border-gray-300]="!(nameCtrl.invalid && nameCtrl.touched)"
+          />
+        </div>
+        @if (nameCtrl.hasError('required') && nameCtrl.touched) {
+          <p class="mt-1 text-xs text-red-500">Name is required</p>
+        } @else if (nameCtrl.hasError('minlength') && nameCtrl.touched) {
+          <p class="mt-1 text-xs text-red-500">At least 2 characters</p>
+        }
+      </div>
+
+      <!-- Household -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1">Household name</label>
+        <div class="relative">
+          <span class="absolute inset-y-0 left-3 flex items-center text-gray-400">
+            <mat-icon class="text-[18px]">home</mat-icon>
+          </span>
+          <input
+            type="text"
+            formControlName="householdName"
+            placeholder="e.g. Smith Family"
+            class="w-full pl-10 pr-4 py-2.5 border rounded-lg text-sm outline-none transition
+                   focus:ring-2 focus:ring-blue-500 focus:border-blue-500 placeholder:text-gray-400"
+            [class.border-red-400]="householdCtrl.invalid && householdCtrl.touched"
+            [class.border-gray-300]="!(householdCtrl.invalid && householdCtrl.touched)"
+          />
+        </div>
+        @if (householdCtrl.hasError('required') && householdCtrl.touched) {
+          <p class="mt-1 text-xs text-red-500">Household name is required</p>
+        }
+      </div>
+
+      <!-- Email -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+        <div class="relative">
+          <span class="absolute inset-y-0 left-3 flex items-center text-gray-400">
+            <mat-icon class="text-[18px]">email</mat-icon>
+          </span>
+          <input
+            type="email"
+            formControlName="email"
+            autocomplete="email"
+            placeholder="you@example.com"
+            class="w-full pl-10 pr-4 py-2.5 border rounded-lg text-sm outline-none transition
+                   focus:ring-2 focus:ring-blue-500 focus:border-blue-500 placeholder:text-gray-400"
+            [class.border-red-400]="emailCtrl.invalid && emailCtrl.touched"
+            [class.border-gray-300]="!(emailCtrl.invalid && emailCtrl.touched)"
+          />
+        </div>
+        @if (emailCtrl.hasError('required') && emailCtrl.touched) {
+          <p class="mt-1 text-xs text-red-500">Email is required</p>
+        } @else if (emailCtrl.hasError('email') && emailCtrl.touched) {
+          <p class="mt-1 text-xs text-red-500">Enter a valid email address</p>
+        }
+      </div>
+
+      <!-- Password -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+        <div class="relative">
+          <span class="absolute inset-y-0 left-3 flex items-center text-gray-400">
+            <mat-icon class="text-[18px]">lock</mat-icon>
+          </span>
+          <input
             [type]="hidePassword() ? 'password' : 'text'"
             formControlName="password"
             autocomplete="new-password"
+            class="w-full pl-10 pr-10 py-2.5 border rounded-lg text-sm outline-none transition
+                   focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            [class.border-red-400]="passwordCtrl.invalid && passwordCtrl.touched"
+            [class.border-gray-300]="!(passwordCtrl.invalid && passwordCtrl.touched)"
           />
-          <mat-icon matPrefix>lock</mat-icon>
-          <button mat-icon-button matSuffix type="button" (click)="hidePassword.set(!hidePassword())">
-            <mat-icon>{{ hidePassword() ? 'visibility_off' : 'visibility' }}</mat-icon>
+          <button
+            type="button"
+            (click)="hidePassword.set(!hidePassword())"
+            class="absolute inset-y-0 right-3 flex items-center text-gray-400 hover:text-gray-600"
+          >
+            <mat-icon class="text-[18px]">{{ hidePassword() ? 'visibility_off' : 'visibility' }}</mat-icon>
           </button>
-          @if (passwordError()) {
-            <mat-error>{{ passwordError() }}</mat-error>
-          }
-          <mat-hint>Min 8 chars, one uppercase, one number</mat-hint>
-        </mat-form-field>
-
-        @if (error()) {
-          <div class="error-banner">
-            <mat-icon>error_outline</mat-icon>
-            <span>{{ error() }}</span>
-          </div>
+        </div>
+        @if (passwordError()) {
+          <p class="mt-1 text-xs text-red-500">{{ passwordError() }}</p>
         }
+        <p class="mt-1 text-xs text-gray-400">Min 8 chars, one uppercase, one number</p>
+      </div>
 
-        <button
-          mat-flat-button
-          color="primary"
-          type="submit"
-          class="full-width submit-btn"
-          [disabled]="loading()"
-        >
-          @if (loading()) {
-            <mat-spinner diameter="20" />
-          } @else {
-            Create account
-          }
-        </button>
-      </form>
-    </mat-card-content>
+      <!-- Server error -->
+      @if (error()) {
+        <div class="flex items-center gap-2 bg-red-50 text-red-700 text-sm px-4 py-3 rounded-lg">
+          <mat-icon class="text-[18px]">error_outline</mat-icon>
+          <span>{{ error() }}</span>
+        </div>
+      }
 
-    <mat-card-actions>
-      <span class="auth-link">
-        Already have an account? <a routerLink="/auth/login">Sign in</a>
-      </span>
-    </mat-card-actions>
-  </mat-card>
+      <!-- Submit -->
+      <button
+        type="submit"
+        [disabled]="loading()"
+        class="w-full flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700
+               disabled:opacity-60 disabled:cursor-not-allowed text-white font-medium
+               py-2.5 rounded-lg transition text-sm"
+      >
+        @if (loading()) {
+          <mat-spinner diameter="18" />
+          <span>Creating…</span>
+        } @else {
+          Create account
+        }
+      </button>
+    </form>
+
+    <p class="mt-6 text-center text-sm text-gray-500">
+      Already have an account?
+      <a routerLink="/auth/login" class="text-blue-600 font-medium hover:underline">Sign in</a>
+    </p>
+  </div>
 </div>
