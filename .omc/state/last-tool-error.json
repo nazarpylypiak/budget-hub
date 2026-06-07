@@ -1,0 +1,7 @@
+{
+  "tool_name": "Bash",
+  "tool_input_preview": "{\"command\":\"gh pr create --title \\\"feat: scaffold Nx monorepo with Angular 21 + NestJS 11 MVP\\\" --body \\\"$(cat <<'EOF'\\n## Summary\\n\\n- Sets up Nx 22 monorepo with `apps/web` (Angular 21), `apps/api` ...",
+  "error": "Exit code 1\npull request create failed: GraphQL: The feat/scaffold branch has no history in common with main (createPullRequest)",
+  "timestamp": "2026-06-07T13:10:20.096Z",
+  "retry_count": 1
+}

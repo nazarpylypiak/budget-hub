@@ -1,0 +1,338 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1780834352623,
+  "projectRoot": "/Users/nazar/VSCodeProjects/budget-hub",
+  "techStack": {
+    "languages": [],
+    "frameworks": [],
+    "packageManager": null,
+    "runtime": null
+  },
+  "build": {
+    "buildCommand": null,
+    "testCommand": null,
+    "lintCommand": null,
+    "devCommand": null,
+    "scripts": {}
+  },
+  "conventions": {
+    "namingStyle": null,
+    "importStyle": null,
+    "testPattern": null,
+    "fileOrganization": null
+  },
+  "structure": {
+    "isMonorepo": false,
+    "workspaces": [],
+    "mainDirectories": [],
+    "gitBranches": {
+      "defaultBranch": "main",
+      "branchingStrategy": null
+    }
+  },
+  "customNotes": [],
+  "directoryMap": {},
+  "hotPaths": [
+    {
+      "path": "CLAUDE.md",
+      "accessCount": 5,
+      "lastAccessed": 1780836475485,
+      "type": "file"
+    },
+    {
+      "path": "package.json",
+      "accessCount": 4,
+      "lastAccessed": 1780836283793,
+      "type": "file"
+    },
+    {
+      "path": "tsconfig.base.json",
+      "accessCount": 3,
+      "lastAccessed": 1780835768290,
+      "type": "file"
+    },
+    {
+      "path": "apps/api/src/auth/strategies/jwt.strategy.ts",
+      "accessCount": 3,
+      "lastAccessed": 1780836803869,
+      "type": "file"
+    },
+    {
+      "path": "apps/api/src/main.ts",
+      "accessCount": 3,
+      "lastAccessed": 1780836804793,
+      "type": "file"
+    },
+    {
+      "path": "README.md",
+      "accessCount": 2,
+      "lastAccessed": 1780834418455,
+      "type": "file"
+    },
+    {
+      "path": "nx.json",
+      "accessCount": 2,
+      "lastAccessed": 1780835443759,
+      "type": "file"
+    },
+    {
+      "path": "libs/shared-types/tsconfig.json",
+      "accessCount": 2,
+      "lastAccessed": 1780835774078,
+      "type": "file"
+    },
+    {
+      "path": "apps/web/src/app/app.routes.ts",
+      "accessCount": 2,
+      "lastAccessed": 1780835928667,
+      "type": "file"
+    },
+    {
+      "path": "apps/web/src/app/app.config.ts",
+      "accessCount": 2,
+      "lastAccessed": 1780835936871,
+      "type": "file"
+    },
+    {
+      "path": "apps/api/src/app/app.module.ts",
+      "accessCount": 2,
+      "lastAccessed": 1780836023265,
+      "type": "file"
+    },
+    {
+      "path": "apps/api/src/auth/auth.service.ts",
+      "accessCount": 2,
+      "lastAccessed": 1780836186468,
+      "type": "file"
+    },
+    {
+      "path": "apps/api/src/auth/auth.controller.ts",
+      "accessCount": 2,
+      "lastAccessed": 1780836192322,
+      "type": "file"
+    },
+    {
+      "path": "docker-compose.yml",
+      "accessCount": 1,
+      "lastAccessed": 1780835250345,
+      "type": "file"
+    },
+    {
+      "path": ".env.example",
+      "accessCount": 1,
+      "lastAccessed": 1780835259343,
+      "type": "file"
+    },
+    {
+      "path": "budget-hub-init/package.json",
+      "accessCount": 1,
+      "lastAccessed": 1780835336537,
+      "type": "file"
+    },
+    {
+      "path": "budget-hub-init/nx.json",
+      "accessCount": 1,
+      "lastAccessed": 1780835336935,
+      "type": "file"
+    },
+    {
+      "path": "libs/shared-types/package.json",
+      "accessCount": 1,
+      "lastAccessed": 1780835683614,
+      "type": "file"
+    },
+    {
+      "path": "libs/shared-types/project.json",
+      "accessCount": 1,
+      "lastAccessed": 1780835688166,
+      "type": "file"
+    },
+    {
+      "path": "libs/shared-types/src/lib/enums.ts",
+      "accessCount": 1,
+      "lastAccessed": 1780835697636,
+      "type": "file"
+    },
+    {
+      "path": "libs/shared-types/src/lib/auth.dto.ts",
+      "accessCount": 1,
+      "lastAccessed": 1780835702908,
+      "type": "file"
+    },
+    {
+      "path": "libs/shared-types/src/lib/category.dto.ts",
+      "accessCount": 1,
+      "lastAccessed": 1780835703575,
+      "type": "file"
+    },
+    {
+      "path": "libs/shared-types/src/lib/transaction.dto.ts",
+      "accessCount": 1,
+      "lastAccessed": 1780835704316,
+      "type": "file"
+    },
+    {
+      "path": "libs/shared-types/src/lib/budget.dto.ts",
+      "accessCount": 1,
+      "lastAccessed": 1780835704963,
+      "type": "file"
+    },
+    {
+      "path": "libs/shared-types/src/lib/dashboard.dto.ts",
+      "accessCount": 1,
+      "lastAccessed": 1780835706250,
+      "type": "file"
+    },
+    {
+      "path": "libs/shared-types/src/index.ts",
+      "accessCount": 1,
+      "lastAccessed": 1780835707168,
+      "type": "file"
+    },
+    {
+      "path": "apps/web/src/app/core/auth/auth.service.ts",
+      "accessCount": 1,
+      "lastAccessed": 1780835901197,
+      "type": "file"
+    },
+    {
+      "path": "apps/web/src/app/core/interceptors/jwt.interceptor.ts",
+      "accessCount": 1,
+      "lastAccessed": 1780835906277,
+      "type": "file"
+    },
+    {
+      "path": "apps/web/src/app/core/guards/auth.guard.ts",
+      "accessCount": 1,
+      "lastAccessed": 1780835908225,
+      "type": "file"
+    },
+    {
+      "path": "apps/web/src/app/features/auth/auth.routes.ts",
+      "accessCount": 1,
+      "lastAccessed": 1780835963612,
+      "type": "file"
+    },
+    {
+      "path": "apps/web/src/app/features/auth/login/login.component.ts",
+      "accessCount": 1,
+      "lastAccessed": 1780835967714,
+      "type": "file"
+    },
+    {
+      "path": "apps/web/src/app/features/auth/login/login.component.html",
+      "accessCount": 1,
+      "lastAccessed": 1780835970998,
+      "type": "file"
+    },
+    {
+      "path": "apps/web/src/app/features/auth/register/register.component.ts",
+      "accessCount": 1,
+      "lastAccessed": 1780835978030,
+      "type": "file"
+    },
+    {
+      "path": "apps/web/src/app/features/auth/register/register.component.html",
+      "accessCount": 1,
+      "lastAccessed": 1780835979521,
+      "type": "file"
+    },
+    {
+      "path": "apps/web/src/app/features/dashboard/dashboard.component.ts",
+      "accessCount": 1,
+      "lastAccessed": 1780835980393,
+      "type": "file"
+    },
+    {
+      "path": "apps/web/src/app/features/transactions/transactions.component.ts",
+      "accessCount": 1,
+      "lastAccessed": 1780835981242,
+      "type": "file"
+    },
+    {
+      "path": "apps/web/src/app/features/budgets/budgets.component.ts",
+      "accessCount": 1,
+      "lastAccessed": 1780835981963,
+      "type": "file"
+    },
+    {
+      "path": "apps/web/src/app/features/settings/settings.component.ts",
+      "accessCount": 1,
+      "lastAccessed": 1780835982921,
+      "type": "file"
+    },
+    {
+      "path": "apps/api/prisma/schema.prisma",
+      "accessCount": 1,
+      "lastAccessed": 1780835998440,
+      "type": "file"
+    },
+    {
+      "path": "apps/api/src/prisma/prisma.module.ts",
+      "accessCount": 1,
+      "lastAccessed": 1780836008456,
+      "type": "file"
+    },
+    {
+      "path": "apps/api/src/prisma/prisma.service.ts",
+      "accessCount": 1,
+      "lastAccessed": 1780836009574,
+      "type": "file"
+    },
+    {
+      "path": "apps/api/src/auth/auth.module.ts",
+      "accessCount": 1,
+      "lastAccessed": 1780836032655,
+      "type": "file"
+    },
+    {
+      "path": "apps/api/src/auth/decorators/current-user.decorator.ts",
+      "accessCount": 1,
+      "lastAccessed": 1780836049434,
+      "type": "file"
+    },
+    {
+      "path": "apps/api/src/users/users.module.ts",
+      "accessCount": 1,
+      "lastAccessed": 1780836054653,
+      "type": "file"
+    },
+    {
+      "path": "apps/api/src/users/users.service.ts",
+      "accessCount": 1,
+      "lastAccessed": 1780836056969,
+      "type": "file"
+    },
+    {
+      "path": "apps/api/src/users/users.controller.ts",
+      "accessCount": 1,
+      "lastAccessed": 1780836059556,
+      "type": "file"
+    },
+    {
+      "path": "apps/api/src/households/households.module.ts",
+      "accessCount": 1,
+      "lastAccessed": 1780836061025,
+      "type": "file"
+    },
+    {
+      "path": "apps/api/src/households/households.service.ts",
+      "accessCount": 1,
+      "lastAccessed": 1780836063144,
+      "type": "file"
+    },
+    {
+      "path": "apps/api/src/households/households.controller.ts",
+      "accessCount": 1,
+      "lastAccessed": 1780836065097,
+      "type": "file"
+    },
+    {
+      "path": "apps/api/src/categories/categories.module.ts",
+      "accessCount": 1,
+      "lastAccessed": 1780836066326,
+      "type": "file"
+    }
+  ],
+  "userDirectives": []
+}
