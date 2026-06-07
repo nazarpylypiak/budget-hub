@@ -35,14 +35,20 @@
   "hotPaths": [
     {
       "path": "CLAUDE.md",
-      "accessCount": 5,
-      "lastAccessed": 1780836475485,
+      "accessCount": 6,
+      "lastAccessed": 1780839112779,
       "type": "file"
     },
     {
       "path": "package.json",
       "accessCount": 4,
       "lastAccessed": 1780836283793,
+      "type": "file"
+    },
+    {
+      "path": "apps/api/src/main.ts",
+      "accessCount": 4,
+      "lastAccessed": 1780840184981,
       "type": "file"
     },
     {
@@ -58,9 +64,21 @@
       "type": "file"
     },
     {
-      "path": "apps/api/src/main.ts",
+      "path": "apps/api/src/auth/auth.controller.ts",
       "accessCount": 3,
-      "lastAccessed": 1780836804793,
+      "lastAccessed": 1780840166306,
+      "type": "file"
+    },
+    {
+      "path": "apps/api/src/auth/auth.service.ts",
+      "accessCount": 3,
+      "lastAccessed": 1780840177961,
+      "type": "file"
+    },
+    {
+      "path": "apps/api/src/app/app.module.ts",
+      "accessCount": 3,
+      "lastAccessed": 1780840182351,
       "type": "file"
     },
     {
@@ -94,21 +112,33 @@
       "type": "file"
     },
     {
-      "path": "apps/api/src/app/app.module.ts",
+      "path": "apps/web/src/app/core/interceptors/jwt.interceptor.ts",
       "accessCount": 2,
-      "lastAccessed": 1780836023265,
+      "lastAccessed": 1780840092494,
       "type": "file"
     },
     {
-      "path": "apps/api/src/auth/auth.service.ts",
+      "path": "apps/web/src/app/features/auth/login/login.component.ts",
       "accessCount": 2,
-      "lastAccessed": 1780836186468,
+      "lastAccessed": 1780840103290,
       "type": "file"
     },
     {
-      "path": "apps/api/src/auth/auth.controller.ts",
+      "path": "apps/web/src/app/features/auth/login/login.component.html",
       "accessCount": 2,
-      "lastAccessed": 1780836192322,
+      "lastAccessed": 1780840111138,
+      "type": "file"
+    },
+    {
+      "path": "apps/web/src/app/features/auth/register/register.component.ts",
+      "accessCount": 2,
+      "lastAccessed": 1780840132962,
+      "type": "file"
+    },
+    {
+      "path": "apps/web/src/app/features/auth/register/register.component.html",
+      "accessCount": 2,
+      "lastAccessed": 1780840143471,
       "type": "file"
     },
     {
@@ -196,12 +226,6 @@
       "type": "file"
     },
     {
-      "path": "apps/web/src/app/core/interceptors/jwt.interceptor.ts",
-      "accessCount": 1,
-      "lastAccessed": 1780835906277,
-      "type": "file"
-    },
-    {
       "path": "apps/web/src/app/core/guards/auth.guard.ts",
       "accessCount": 1,
       "lastAccessed": 1780835908225,
@@ -211,30 +235,6 @@
       "path": "apps/web/src/app/features/auth/auth.routes.ts",
       "accessCount": 1,
       "lastAccessed": 1780835963612,
-      "type": "file"
-    },
-    {
-      "path": "apps/web/src/app/features/auth/login/login.component.ts",
-      "accessCount": 1,
-      "lastAccessed": 1780835967714,
-      "type": "file"
-    },
-    {
-      "path": "apps/web/src/app/features/auth/login/login.component.html",
-      "accessCount": 1,
-      "lastAccessed": 1780835970998,
-      "type": "file"
-    },
-    {
-      "path": "apps/web/src/app/features/auth/register/register.component.ts",
-      "accessCount": 1,
-      "lastAccessed": 1780835978030,
-      "type": "file"
-    },
-    {
-      "path": "apps/web/src/app/features/auth/register/register.component.html",
-      "accessCount": 1,
-      "lastAccessed": 1780835979521,
       "type": "file"
     },
     {
